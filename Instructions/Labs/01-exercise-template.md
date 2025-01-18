@@ -1,6 +1,5 @@
----
-lab:
-  title: Créer un agent personnalisé
+
+Labo : « Créer un agent personnalisé »
 ---
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
@@ -48,7 +47,7 @@ Cliquez sur **Suivant**.
 
 ## Tâche 2 : implémenter la RAG pour le modèle Azure OpenAI
 
-Maintenant, nous allons...
+Dans cette tâche, vous allez apprendre à implémenter la RAG à l’aide d’une source de données pour votre propre environnement de test.
 
 1. Dans la page de votre ressource Azure OpenAI nouvellement créée, dans le ruban en haut de la page, cliquez sur **Accéder à Azure OpenAI Studio**.
 2. Dans la nouvelle page intitulée **Bienvenue sur Azure OpenAI Service**, dans le menu de navigation à gauche de l’écran, cliquez sur **Conversation**.
@@ -78,7 +77,7 @@ Maintenant, nous allons...
 
  ## Tâche 3 : créer et tester un agent personnalisé dans l’outil de test et Teams
 
-Maintenant, nous allons...
+Dans cette tâche, vous allez créer l’agent personnalisé et le tester.
 
 1. Ouvrez **Visual Studio Code**.
 2. Dans la partie droite de la fenêtre Visual Studio Code, sélectionnez l’icône **Teams Toolkit** > sélectionnez **Create a New App** > dans la liste déroulante, sélectionnez **Custom Engine Agent** (remarque : selon la version de Teams Toolkit, vous devrez peut-être sélectionner **Custom Copilot**) > **Basic AI Chatbot** > **JavaScript** > **Azure OpenAI**.
@@ -96,13 +95,25 @@ Maintenant, nous allons...
 
    f. Dans la nouvelle fenêtre VS Code de l’application créée à partir des étapes a-f ci-dessus, accédez à l’icône **Teams Toolkit** sur le côté gauche de l’écran.
 
+   **Remarque :** les étapes g-i doivent être effectuées pour l’environnement d’un utilisateur qui n’a pas d’accès administrateur au Centre d’administration Microsoft Teams. Si les utilisateurs disposent d’un locataire M365 avec l’accès administrateur, effectuez les étapes j-m à la place.
+
    g. Dans la section **Accounts**, cliquez sur **Sign in to Microsoft 365**. Cela ouvrira une nouvelle fenêtre dans le navigateur. Connectez-vous à l’aide des informations d’identification fournies.
 
    .h Revenez à la page VS Code de votre application. Vous devez maintenant voir une coche verte à côté des mots **Custom App Upload Enabled** dans **Accounts.
 
    i. Dans la section **Accounts**, cliquez sur **Sign in to Azure**. Cliquez sur **OK** dans chaque fenêtre contextuelle. Cela ouvrira une nouvelle fenêtre dans le navigateur. Connectez-vous à l’aide des informations d’identification fournies.
+
+   Pour les utilisateurs disposant d’un locataire M365 avec un accès administrateur au Centre d’administration Microsoft Teams, effectuez les étapes suivantes au lieu des étapes g-i ci-dessus :
+
+   j. Connectez-vous à https://admin.teams.microsoft.com avec vos informations d’identification d’administrateur.
+
+   k. Accédez aux  **applications Teams**  dans la barre latérale, puis sélectionnez  **Stratégies de configuration**.
+
+   l. Sélectionnez la stratégie  **globale (valeur par défaut à l’échelle de l’organisation)** , puis activez le bouton bascule  **Charger des applications personnalisées** .
+
+   m. Faites défiler vers le bas et sélectionnez le bouton  **Enregistrer**  pour enregistrer les modifications. Votre locataire autorise désormais le chargement indépendant d’applications personnalisées. 
    
-4. Accédez à **src/prompts/chat/skprompt.txt** dans la fenêtre VS Code de votre application. Supprimez le texte du fichier et collez ce qui suit : « Delete any text in the file and paste the following: "The following is a conversation with an AI assistant, who is an expert on answering questions over the given context. 
+5. Accédez à **src/prompts/chat/skprompt.txt** dans la fenêtre VS Code de votre application. Supprimez le texte du fichier et collez ce qui suit : « Delete any text in the file and paste the following: "The following is a conversation with an AI assistant, who is an expert on answering questions over the given context. 
 
 Responses should be in a short journalistic style with no more than 80 words. » 
 
