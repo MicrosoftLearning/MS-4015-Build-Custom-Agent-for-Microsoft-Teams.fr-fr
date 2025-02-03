@@ -20,7 +20,7 @@ Cet exercice devrait prendre environ **30** minutes. <!-- update with estimated
 En premier lieu, vous devez...
 
 1. Dans votre navigateur Edge, accédez à **https://portal.azure.com**.
-1. Connectez-vous au portail Azure à l’aide des informations d’identification fournies dans cet environnement de labo.
+1. Connectez-vous au portail Azure.
 2. Dans le coin supérieur gauche de l’écran, cliquez sur **+ Créer une ressource**.
 1. Dans la zone de recherche, tapez **Azure OpenAI**, appuyez sur Entrée.
 1. Un résultat appelé **Azure OpenAI** doit apparaître en tant qu’option. En bas à gauche de cette option, un bouton intitulé **Créer** est affiché. Appuyez sur > **Créer** > Azure **OpenAI**.
@@ -49,14 +49,13 @@ Cliquez sur **Suivant**.
 
 Dans cette tâche, vous allez apprendre à implémenter la RAG à l’aide d’une source de données pour votre propre environnement de test.
 
-1. Dans la page de votre ressource Azure OpenAI nouvellement créée, dans le ruban en haut de la page, cliquez sur **Accéder à Azure OpenAI Studio**.
-2. Dans la nouvelle page intitulée **Bienvenue sur Azure OpenAI Service**, dans le menu de navigation à gauche de l’écran, cliquez sur **Conversation**.
-3. Dans la nouvelle page intitulée **Terrain de jeu de conversation**, dans **Configuration**, sélectionnez **+ Créer un déploiement** > **À partir de modèles de base**.
-4. Dans la fenêtre contextuelle intitulée **Sélectionner un modèle de saisie semi-automatique de la conversation**, faites défiler vers le bas et sélectionnez l’option **gpt-4o** > **Confirmer**.
-5. Dans la fenêtre **Déployer le modèle gtp-4o**, laissez tout ses paramètres par défaut, puis sélectionnez **Déployer**.
-6. Dans la page **Terrain de jeu de conversation**, en bas de l’écran, sélectionnez **Ajouter vos données** > **+ Ajouter une source de données**.
-7. Dans la fenêtre **Sélectionner ou ajouter une source de données**, sélectionnez **Sélectionner une source de données** dans la liste déroulante, puis **Charger des fichiers (préversion)**.
-8. Dans la page suivante pour **Source de données**, vérifiez que la liste déroulante pour **Sélectionner une source de données** est définie sur **Charger des fichiers (préversion)**.
+1. Dans la page de votre ressource Azure OpenAI nouvellement créée, dans le ruban en haut de la page, cliquez sur **Accéder à Azure AI Foundry**.
+2. Dans la nouvelle page intitulée **Terrain de jeu de conversation**, dans **Configuration**, sélectionnez **+ Créer un déploiement** > **À partir de modèles de base**.
+3. Dans la fenêtre contextuelle intitulée **Sélectionner un modèle de saisie semi-automatique de la conversation**, faites défiler vers le bas et sélectionnez l’option **gpt-4o** > **Confirmer**.
+4. Dans la fenêtre **Déployer le modèle gtp-4o**, laissez tout ses paramètres par défaut, puis sélectionnez **Déployer**.
+5. Dans la page **Terrain de jeu de conversation**, en bas de l’écran, sélectionnez **Ajouter vos données** > **+ Ajouter une source de données**.
+6. Dans la fenêtre **Sélectionner ou ajouter une source de données**, sélectionnez **Sélectionner une source de données** dans la liste déroulante, puis **Charger des fichiers (préversion)**.
+7. Dans la page suivante pour **Source de données**, vérifiez que la liste déroulante pour **Sélectionner une source de données** est définie sur **Charger des fichiers (préversion)**.
    
    a. Dans le champ **Abonnement**, vérifiez que la valeur par défaut est sélectionnée.
    
@@ -64,7 +63,11 @@ Dans cette tâche, vous allez apprendre à implémenter la RAG à l’aide d’u
    
    c. Revenez à la fenêtre **Terrain de jeu de conversation**. Sélectionnez le bouton Actualiser en regard du champ **Sélectionner la ressource Stockage Blob Azure** > sélectionnez la ressource que vous avez créée à l’étape b ci-dessus. Sélectionnez le bouton **Activer CORS**.
    
-9. Pour le champ **Sélectionner une ressource Recherche Azure AI**, sélectionnez **Créer une ressource Recherche Azure AI**.  Vérifiez que les champs **Abonnement** et **Groupe de ressources** sont définis sur les valeurs de votre choix. **Remarque :** étant donné que ce labo est destiné à être effectué sur le propre environnement des apprenants, ceux-ci devront faire preuve de discernement pour sélectionner les valeurs des champs **Abonnement** et **Groupe de ressources**. Cliquez sur la liste déroulante **Groupe de ressources** pour sélectionner l’option de votre choix. Entrez un **nom de service** > vérifiez que tous les autres champs sont définis sur les valeurs par défaut > sélectionnez **Examiner et créer** > **Créer**. Le déploiement de la ressource Recherche Azure AI prend quelques instants.
+8. Pour le champ **Sélectionner une ressource Recherche Azure AI**, sélectionnez **Créer une ressource Recherche Azure AI**.  Vérifiez que les champs **Abonnement** et **Groupe de ressources** sont définis sur les valeurs de votre choix.
+
+   **Remarque :** étant donné que ce labo est destiné à être effectué sur le propre environnement des apprenants, ceux-ci devront faire preuve de discernement pour sélectionner les valeurs des champs **Abonnement** et **Groupe de ressources**.
+
+9. Cliquez sur la liste déroulante **Groupe de ressources** pour sélectionner l’option de votre choix. Entrez un **nom de service** > vérifiez que tous les autres champs sont définis sur les valeurs par défaut > sélectionnez **Examiner et créer** > **Créer**. Le déploiement de la ressource Recherche Azure AI prend quelques instants.
 10. Revenez à la fenêtre **Terrain de jeu de conversation**. Sélectionnez le bouton Actualiser en regard du champ **Sélectionner la ressource Stockage Blob Azure** > sélectionnez la ressource que vous avez créée à l’étape 9 ci-dessus.
 11. Entrez un nom pour le champ **Entrer le nom de l’index** > **Suivant**. Copiez et collez ce nom dans un endroit accessible, car vous en aurez besoin dans les tâches à venir.
 12. Dans la section **Charger des fichiers**, sélectionnez **Parcourir un fichier** > dans l’Explorateur de fichiers, accédez à **Documents** > sélectionnez les trois fichiers : **ContosoAI ChipEnhance Perks Program.docx**, **ContosoAI Insurance Plans.docx** et **Overview of ContosoAI.docx** > **Ouvrir** > les trois fichiers doivent maintenant se trouver dans la page **Charger les fichiers** de la fenêtre > sélectionnez **Charger des fichiers** > **Suivant**.
@@ -155,4 +158,10 @@ Responses should be in a short journalistic style with no more than 80 words. �
 11. Revenez à la fenêtre VS Code de votre application. Sélectionnez la liste déroulante du bouton **Debug** , puis sélectionnez **Debug in Teams (Edge),** puis appuyez sur **F5** ou sur le bouton de lecture vert.
 13. Cela ouvrira une nouvelle fenêtre dans votre navigateur Edge. Vous êtes invité à vous connecter. Utilisez les informations de connexion fournies pour vous connecter. Une fois la connexion réussie, fermez la fenêtre.
 14. Répétez l’étape 11. Il doit y avoir une fenêtre avec le titre de votre application nouvellement créée. Sélectionnez **Ajouter** > **Ouvrir**.
-15. Félicitations ! Vous pouvez maintenant poser à l’agent toute question relatives aux fichiers de données RAG. 
+15. Félicitations ! Vous pouvez maintenant poser à l’agent toute question relatives aux fichiers de données RAG.
+16. **Remarque :** cet agent ayant été conçu à des fins éducatives à l’aide de votre propre abonnement, les utilisateurs doivent le supprimer après l’achèvement de ce labo. Pour supprimer un agent personnalisé dans Microsoft Teams, vous pouvez effectuer les opérations suivantes :
+- Sélectionnez l’agent que vous souhaitez supprimer, puis cliquez sur l’icône **Plus d’options (…)** et sélectionnez **Supprimer**.
+- Supprimez l’agent d’une conversation en sélectionnant les points de suspension dans le fil de discussion et en choisissant **Gérer les applications**.
+- Dans l’expérience de création d’un agent, sélectionnez les **points de suspension (...)** et choisissez **Supprimer**.
+
+**FIN DU LABO**
