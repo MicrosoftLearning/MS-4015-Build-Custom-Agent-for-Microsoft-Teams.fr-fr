@@ -11,9 +11,11 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 Dans cet exercice, vous allez créer une ressource Azure OpenAI qui sert de base à la création de votre agent personnalisé.
 
-Cet exercice devrait prendre environ **30** minutes. <!-- update with estimated duration -->
+Cet exercice devrait prendre environ **60** minutes. <!-- update with estimated duration -->
 
-**Remarque :** les apprenants sont censés terminer ce laboratoire sur leurs propres environnements.
+**Remarque :** les apprenants peuvent effectuer ce labo avec ces options
+1) Environnement de labo Skillable
+2) Remarque : les apprenants sont censés terminer ce labo sur leurs propres environnements pour tous les autres HLA.
 
 ##  Tâche 1 : créer une ressource Azure OpenAI 
 
@@ -23,8 +25,10 @@ En premier lieu, vous devez...
 1. Connectez-vous au portail Azure.
 2. Dans le coin supérieur gauche de l’écran, cliquez sur **+ Créer une ressource**.
 1. Dans la zone de recherche, tapez **Azure OpenAI**, appuyez sur Entrée.
-1. Un résultat appelé **Azure OpenAI** doit apparaître en tant qu’option. En bas à gauche de cette option, un bouton intitulé **Créer** est affiché. Appuyez sur > **Créer** > Azure **OpenAI**.
-1. Dans la page **Créer Azure OpenAI**, définissez les champs suivants : **Remarque : **comme ce labo est censé être effectué sur le propre environnement des apprenants, ceux-ci devront faire preuve de discernement pour sélectionner les valeurs des champs **Abonnement**, **Niveau tarifaire** et **Groupe de ressources**.
+1. Un résultat appelé **Azure OpenAI** doit apparaître en tant qu’option. En bas à gauche de cette option se trouve un bouton **Créer**. Appuyez sur > **Créer** > Azure **OpenAI**.
+1. Sous la page **Créer Azure OpenAI**, définissez les champs suivants :
+
+**Remarque :** pour les apprenants qui utilisent leur propre environnement, ils devront choisir eux-mêmes les valeurs des champs **Abonnement**, **Niveau tarifaire** et **Groupe de ressources**. Pour les apprenants qui utilisent l’environnement de labo Skillable, sélectionnez les valeurs par défaut des champs dans les étapes a-d ci-dessous.
    
    a. **Abonnement** : faites preuves de discernement pour remplir ce champ.
    
@@ -56,16 +60,18 @@ Dans cette tâche, vous allez apprendre à implémenter la RAG à l’aide d’u
 5. Dans la page **Terrain de jeu de conversation**, en bas de l’écran, sélectionnez **Ajouter vos données** > **+ Ajouter une source de données**.
 6. Dans la fenêtre **Sélectionner ou ajouter une source de données**, sélectionnez **Sélectionner une source de données** dans la liste déroulante, puis **Charger des fichiers (préversion)**.
 7. Dans la page suivante pour **Source de données**, vérifiez que la liste déroulante pour **Sélectionner une source de données** est définie sur **Charger des fichiers (préversion)**.
-   
+
+**Remarques :** pour les apprenants qui utilisent leur propre environnement, les utilisateurs et utilisatrices peuvent avoir à choisir eux-mêmes ou elles-mêmes les valeurs des champs pour les étapes a-c ci-dessous. Pour les apprenants qui utilisent l’environnement Skillable, utilisez les valeurs par défaut comme indiqué dans les étapes a-b ci-dessous. 
+  
    a. Dans le champ **Abonnement**, vérifiez que la valeur par défaut est sélectionnée.
    
-    b. Dans le champ **Sélectionner une ressource de stockage Blob Azure**, sélectionnez **Créer une ressource de stockage Blob Azure** > dans la nouvelle fenêtre intitulée **Créer un compte** de stockage, dans l’onglet **Informations de base**, vérifiez que les champs **Abonnement** et **Groupe de ressources** sont définis sur les valeurs par défaut. Choisissez la seule valeur disponible pour **Groupe de ressources**. Dans **Détails de l’instance**, indiquez un nom pour **Nom de compte de stockage**. Laissez le reste des champs tels quels. Sélectionnez **Revoir + créer**. Dans l’onglet **Examiner et créer**, sélectionnez le bouton **Créer**. Le déploiement de la ressource Stockage Blob Azure prend quelques instants.
+   b. Dans le champ **Sélectionner une ressource de stockage Blob Azure**, sélectionnez **Créer une ressource de stockage Blob Azure** > dans la nouvelle fenêtre intitulée **Créer un compte de stockage**, dans l’onglet **Informations de base**, vérifiez que les champs **Abonnement** et **Groupe de ressources** sont définis sur les valeurs par défaut. Choisissez la seule valeur disponible pour **Groupe de ressources**. Dans **Détails de l’instance**, indiquez un nom pour **Nom de compte de stockage**. Laissez le reste des champs tels quels. Sélectionnez **Revoir + créer**. Dans l’onglet **Examiner et créer**, sélectionnez le bouton **Créer**. Le déploiement de la ressource Stockage Blob Azure prend quelques instants.
    
    c. Revenez à la fenêtre **Terrain de jeu de conversation**. Sélectionnez le bouton Actualiser en regard du champ **Sélectionner la ressource Stockage Blob Azure** > sélectionnez la ressource que vous avez créée à l’étape b ci-dessus. Sélectionnez le bouton **Activer CORS**.
    
 8. Pour le champ **Sélectionner une ressource Recherche Azure AI**, sélectionnez **Créer une ressource Recherche Azure AI**.  Vérifiez que les champs **Abonnement** et **Groupe de ressources** sont définis sur les valeurs de votre choix.
 
-   **Remarque :** étant donné que ce labo est destiné à être effectué sur le propre environnement des apprenants, ceux-ci devront faire preuve de discernement pour sélectionner les valeurs des champs **Abonnement** et **Groupe de ressources**.
+   **Remarque :** pour les apprenants qui utilisent leur propre environnement, choisissez vous-mêmes les valeurs des champs **Abonnement** et **Groupe de ressources**.
 
 9. Cliquez sur la liste déroulante **Groupe de ressources** pour sélectionner l’option de votre choix. Entrez un **nom de service** > vérifiez que tous les autres champs sont définis sur les valeurs par défaut > sélectionnez **Examiner et créer** > **Créer**. Le déploiement de la ressource Recherche Azure AI prend quelques instants.
 10. Revenez à la fenêtre **Terrain de jeu de conversation**. Sélectionnez le bouton Actualiser en regard du champ **Sélectionner la ressource Stockage Blob Azure** > sélectionnez la ressource que vous avez créée à l’étape 9 ci-dessus.
@@ -94,11 +100,12 @@ Dans cette tâche, vous allez créer l’agent personnalisé et le tester.
 
    d. Pour **Choose the folder where your project room folder will be located**, sélectionnez **Default folder**.
 
-   e. Pour **Input application name**, tapez un nom > **Entrée**> dans la fenêtre contextuelle, sélectionnez **Yes, I trust the authors**.
+   e. Pour **Entrer un nom d’application**, tapez un nom > **Entrée** > dans la fenêtre contextuelle, sélectionnez **Oui, je fais confiance aux auteurs**.
 
-   f. Dans la nouvelle fenêtre VS Code de l’application créée à partir des étapes a-f ci-dessus, accédez à l’icône **Teams Toolkit** sur le côté gauche de l’écran.
+   f. Dans la nouvelle fenêtre VS Code de l’application créée à partir des étapes a-f ci-dessus, accédez à l’icône **Kit de ressources Teams** sur le côté gauche de l’écran.
 
-   **Remarque :** les étapes g-i doivent être effectuées pour l’environnement d’un utilisateur qui n’a pas d’accès administrateur au Centre d’administration Microsoft Teams. Si les utilisateurs disposent d’un locataire M365 avec l’accès administrateur, effectuez les étapes j-m à la place.
+   **Remarque :** les étapes g-i doivent être effectuées pour l’environnement d’un utilisateur qui n’a pas d’accès administratif au Centre d’administration Microsoft Teams et/ou pour les apprenants qui utilisent l’environnement Skillable.
+  Pour les apprenants qui utilisent leurs propres environnements, effectuez les étapes j-m à la place.
 
    g. Dans la section **Accounts**, cliquez sur **Sign in to Microsoft 365**. Cela ouvrira une nouvelle fenêtre dans le navigateur. Connectez-vous à l’aide des informations d’identification fournies.
 
@@ -106,7 +113,7 @@ Dans cette tâche, vous allez créer l’agent personnalisé et le tester.
 
    i. Dans la section **Accounts**, cliquez sur **Sign in to Azure**. Cliquez sur **OK** dans chaque fenêtre contextuelle. Cela ouvrira une nouvelle fenêtre dans le navigateur. Connectez-vous à l’aide des informations d’identification fournies.
 
-   Pour les utilisateurs disposant d’un locataire M365 avec un accès administrateur au Centre d’administration Microsoft Teams, effectuez les étapes suivantes au lieu des étapes g-i ci-dessus :
+   Pour les utilisateurs et utilisatrices disposant d’une licence de locataire M365 avec un accès administratif au Centre d’administration Microsoft Teams, effectuez les étapes suivantes au lieu des étapes g-i ci-dessus :
 
    j. Connectez-vous à https://admin.teams.microsoft.com avec vos informations d’identification d’administrateur.
 
@@ -116,7 +123,7 @@ Dans cette tâche, vous allez créer l’agent personnalisé et le tester.
 
    m. Faites défiler vers le bas et sélectionnez le bouton  **Enregistrer**  pour enregistrer les modifications. Votre locataire autorise désormais le chargement indépendant d’applications personnalisées. 
    
-5. Accédez à **src/prompts/chat/skprompt.txt** dans la fenêtre VS Code de votre application. Supprimez le texte du fichier et collez ce qui suit : « Delete any text in the file and paste the following: "The following is a conversation with an AI assistant, who is an expert on answering questions over the given context. 
+4. Accédez à **src/prompts/chat/skprompt.txt** dans la fenêtre VS Code de votre application. Supprimez le texte du fichier et collez ce qui suit : « Delete any text in the file and paste the following: "The following is a conversation with an AI assistant, who is an expert on answering questions over the given context. 
 
 Responses should be in a short journalistic style with no more than 80 words. » 
 
@@ -159,9 +166,12 @@ Responses should be in a short journalistic style with no more than 80 words. �
 13. Cela ouvrira une nouvelle fenêtre dans votre navigateur Edge. Vous êtes invité à vous connecter. Utilisez les informations de connexion fournies pour vous connecter. Une fois la connexion réussie, fermez la fenêtre.
 14. Répétez l’étape 11. Il doit y avoir une fenêtre avec le titre de votre application nouvellement créée. Sélectionnez **Ajouter** > **Ouvrir**.
 15. Félicitations ! Vous pouvez maintenant poser à l’agent toute question relatives aux fichiers de données RAG.
-16. **Remarque :** cet agent ayant été conçu à des fins éducatives à l’aide de votre propre abonnement, les utilisateurs doivent le supprimer après l’achèvement de ce labo. Pour supprimer un agent personnalisé dans Microsoft Teams, vous pouvez effectuer les opérations suivantes :
+16. **Remarque :** pour les apprenants qui utilisent leur propre environnement pour ce labo, cet agent ayant été conçu à des fins pédagogiques à l’aide de votre abonnement, les utilisateurs et utilisatrices doivent le supprimer après l’achèvement de ce labo. Pour supprimer un agent personnalisé dans Microsoft Teams, vous pouvez effectuer les opérations suivantes :
 - Sélectionnez l’agent que vous souhaitez supprimer, puis cliquez sur l’icône **Plus d’options (…)** et sélectionnez **Supprimer**.
 - Supprimez l’agent d’une conversation en sélectionnant les points de suspension dans le fil de discussion et en choisissant **Gérer les applications**.
-- Dans l’expérience de création d’un agent, sélectionnez les **points de suspension (...)** et choisissez **Supprimer**.
+- Dans l’expérience de création d’un agent, sélectionnez les **points de suspension (...)** et choisissez **Supprimer**. Dans l’expérience de création d’un agent, sélectionnez les **points de suspension (...)** et choisissez **Supprimer**.
+
+**FIN DU LABO**
+
 
 **FIN DU LABO**
