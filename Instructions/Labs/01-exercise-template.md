@@ -14,7 +14,7 @@ Dans cet exercice, vous allez créer une ressource Azure OpenAI qui sert de base
 Cet exercice devrait prendre environ **60** minutes. <!-- update with estimated duration -->
 
 **Remarque :** les apprenants peuvent effectuer ce labo avec ces options
-1) Environnement de labo Skillable
+1) Un environnement de labo est fourni pour les apprenants.
 2) Remarque : les apprenants sont censés terminer ce labo sur leurs propres environnements pour tous les autres HLA.
 
 ##  Tâche 1 : créer une ressource Azure OpenAI 
@@ -28,7 +28,7 @@ En premier lieu, vous devez...
 1. Un résultat appelé **Azure OpenAI** doit apparaître en tant qu’option. En bas à gauche de cette option se trouve un bouton **Créer**. Appuyez sur > **Créer** > Azure **OpenAI**.
 1. Sous la page **Créer Azure OpenAI**, définissez les champs suivants :
 
-**Remarque :** pour les apprenants qui utilisent leur propre environnement, ils devront choisir eux-mêmes les valeurs des champs **Abonnement**, **Niveau tarifaire** et **Groupe de ressources**. Pour les apprenants qui utilisent l’environnement de labo Skillable, sélectionnez les valeurs par défaut des champs dans les étapes a-d ci-dessous.
+**Remarque :** pour les apprenants qui utilisent leur propre environnement, ils devront choisir eux-mêmes les valeurs des champs **Abonnement**, **Niveau tarifaire** et **Groupe de ressources**. Pour les apprenants qui utilisent l’environnement de labo, sélectionnez les valeurs par défaut des champs dans les étapes a-d ci-dessous.
    
    a. **Abonnement** : faites preuves de discernement pour remplir ce champ.
    
@@ -61,7 +61,7 @@ Dans cette tâche, vous allez apprendre à implémenter la RAG à l’aide d’u
 6. Dans la fenêtre **Sélectionner ou ajouter une source de données**, sélectionnez **Sélectionner une source de données** dans la liste déroulante, puis **Charger des fichiers (préversion)**.
 7. Dans la page suivante pour **Source de données**, vérifiez que la liste déroulante pour **Sélectionner une source de données** est définie sur **Charger des fichiers (préversion)**.
 
-**Remarques :** pour les apprenants qui utilisent leur propre environnement, les utilisateurs et utilisatrices peuvent avoir à choisir eux-mêmes ou elles-mêmes les valeurs des champs pour les étapes a-c ci-dessous. Pour les apprenants qui utilisent l’environnement Skillable, utilisez les valeurs par défaut comme indiqué dans les étapes a-b ci-dessous. 
+**Remarques :** pour les apprenants qui utilisent leur propre environnement, les utilisateurs et utilisatrices peuvent avoir à choisir eux-mêmes ou elles-mêmes les valeurs des champs pour les étapes a-c ci-dessous. Pour les apprenants qui utilisent l’environnement de labo, utilisez les valeurs par défaut comme indiqué dans les étapes a-b ci-dessous. 
   
    a. Dans le champ **Abonnement**, vérifiez que la valeur par défaut est sélectionnée.
    
@@ -104,7 +104,7 @@ Dans cette tâche, vous allez créer l’agent personnalisé et le tester.
 
    f. Dans la nouvelle fenêtre VS Code de l’application créée à partir des étapes a-f ci-dessus, accédez à l’icône **Kit de ressources Teams** sur le côté gauche de l’écran.
 
-   **Remarque :** les étapes g-i doivent être effectuées pour l’environnement d’un utilisateur qui n’a pas d’accès administratif au Centre d’administration Microsoft Teams et/ou pour les apprenants qui utilisent l’environnement Skillable.
+   **Remarque :** les étapes g-i doivent être effectuées pour l’environnement d’un utilisateur qui n’a pas d’accès administratif au Centre d’administration Microsoft Teams et/ou pour les apprenants qui utilisent l’environnement de labo.
   Pour les apprenants qui utilisent leurs propres environnements, effectuez les étapes j-m à la place.
 
    g. Dans la section **Accounts**, cliquez sur **Sign in to Microsoft 365**. Cela ouvrira une nouvelle fenêtre dans le navigateur. Connectez-vous à l’aide des informations d’identification fournies.
